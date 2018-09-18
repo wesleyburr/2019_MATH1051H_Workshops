@@ -38,3 +38,12 @@ class: inverse
 
 <a href="./Workshop02/index.html">Workshop 02 - Link to Slides</a>
 
+---
+
+class: inverse
+
+## Workshop 03 - September 20 & 21
+
+<a href="./Workshop03/index.html">Workshop 03 - Link to Slides</a>
+
+

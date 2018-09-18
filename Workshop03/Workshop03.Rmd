@@ -1,0 +1,150 @@
+---
+title: "MATH 1051H - Workshop 3"
+author: "Wesley S. Burr"
+date: "20/9/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Today in workshop we will be exploring the use of **vectors** in R. We mentioned this in Friday lecture this week, and now we're going to see first-hand how to use them to save, compute, and think about data.
+
+## R Markdown (reminder)
+
+As we did last week, we strongly encourage you to look at this file and the resulting 'knitted' document as a pair, and consider how to make things work (and look good). If you'd like to learn more about R Markdown, we suggest starting with the guide on [RStudio's website](https://rmarkdown.rstudio.com/lesson-1.html), and just **playing** with one of these files until you break it. Then fix it! Then break it again ...
+
+## The Vector
+
+One of the most powerful features of R is that the base working object, the thing we use the most, is the **vector**. A vector in R is a variable (a "box to store things in") which has multiple values stored in it. They're organized sequentially. Here are some examples.
+
+```{r example1}
+u <- c(1, 2, 3)
+v <- c(1.1, 1.2, 1.3)
+w <- c(27.5, 1.3, 99.6)
+x <- c(11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+y <- c("Yes", "No", "Maybe")
+z <- c("Cat", "Dog", "Rabbit")
+```
+
+Notice how these vectors have different numbers of "things" in them? Those "things" are called **elements**. What do you notice about the similarities between the elements?
+
+### Vector and Variable Type
+
+One key thing about vectors is that they can **only** store **one** kind of variable type. So you can have discrete numerical values (integers) **or** you can have categorical - ordinal elements. Not both, ever. Which raises the point: what happens if we try?
+
+**Note**: one of the best way to figure out how things work is to ask yourself "What happens if I try to break this?" or "What happens if I put things **this** way ... ?"
+
+```{r example2}
+x <- c("1", 2, 3, "4")
+y <- c(1L, 2L, 3L, 4.0)
+```
+
+What do you think the **class** of these vectors will be? Modify the above R chunk, and add two commands, and check. Do you understand what happened?
+
+**Challenge**: there are four variable types we talked about last week - characters, numeric, integer and Boolean (TRUE/FALSE). Create four new vectors with mixtures of each of these, and check their classes. What is going on? Do you understand how R is changing variable types to make the vector work?
+
+### Combining Vectors
+
+We can **combine** vectors by pasting them together. The word we use for this is **concatenate** (to put together), and the R command is **c()**. We already used it above!
+
+```{r example3}
+x <- c(1, 2, 3)
+y <- c(1.1, 2.1, 3.1)
+z <- c(x, y)
+```
+
+Modify the above chunk to also print each of the vectors out to the screen. Does what **z** prints to make sense to you?
+
+### Arithmetic on Vectors
+
+Arithmetic (math!) operations applied to vectors affect **every** element of a vector. We create a pair of vectors consisting of a sequence of numbers, using the **:** command. This command creates a sequence of numbers from the left number to the right number. 
+
+```{r new_vectors}
+x <- 1:5
+y <- 6:10
+z1 <- c(x, y)
+z2 <- c(y, x)
+```
+Run the above chunk, then insert commands into the chunk to print all of the vectors to screen. Now, let's do some math on these vectors:
+
+```{r math}
+x + y
+x^2
+z2 - z1
+2 * x + y
+```
+
+What other things could we do? There are five total "simple" operations: addition (**+**), subtraction (**-**), multiplication (*), division (/) and powers (^). Add two more lines to the above completing other computations on these. 
+
+**Challenge**: try creating an arithmetic operation line which uses **x** and **z1**. What happens? What numbers come out? This is known as **recycling**, and is R trying to be "helpful" - but very confusing! You should always make sure to only combine vectors which have the same number of elements, otherwise strange things happen.
+
+### Working with Elements of a Vector
+
+The act of examining or removing elements from a vector is called **subsetting**. We can **subset** elements one-by-one, by groups, or any number of variations. Here are some examples:
+
+```{r subsets1}
+x <- 1:20
+x
+x[1]
+x[6]
+x[7]
+x[-1]
+x[2:4]
+```
+
+So what happens here? **x** is the numbers from 1 to 20 in order, then the command **x[1]** grabs ... the first element of the 20! Similarly **x[6]** and **x[7]** work the same way. What does the negative (**x[-1]**) do? What about **x[2:4]**?
+
+### Subsetting without Sequential
+
+You saw above that we can subset by singular numbers, by removing ("what I don't want") and by sequences. We can also subset by using a second vector.
+
+```{r more_subset}
+x[c(1, 3, 5, 7)]
+x[c(1, 10, 20)]
+```
+
+**Any** vector which makes sense can be used to subset. What happens if it doesn't make sense?
+
+**Challenge**: add an extra line to the above chunk which tries to access the 21st element of the vector **x**. What do you see? 
+
+## Sampling
+
+As of Friday, we are starting the **Probability** chapter. One of the most fundamental ideas about probability and statistics is **sampling**. We talked about ways of sampling in the first week, and hinted at some more details this week, so let's ask our computers to sample things for us.
+
+```{r sample1}
+my_sample <- sample(x = 1:10, size = 20, replace = TRUE)
+```
+
+Let's decompose this command. **sample()** is a **function**: we tell it what to do, and it goes off and does it. The first **argument** to sample() is **x**, which in this case was the numbers from 1 to 10 (1, 2, ..., 10). The second argument is the **size**, which was 20: this is how many times we want to sample! And the final argument is **replace**, which is set to either **TRUE** or **FALSE**. This sets the sample() function to either "sample with replacement" or "sample without replacement".
+
+If our **sample** is being taken from a bag of results, **sampling with replacement** is pulling one object from the bag, looking at it, recording its result, then putting it **back** in the bag. The opposite, **sampling without replacement**, does not return the object to the bag: once it's been pulled out, it cannot be re-found.
+
+Try changing **replace = TRUE** in the above to **replace = FALSE**. What happens? What does this error mean?
+
+### Rolling a Die
+
+We can use a computer to do basic probability things really, really fast. For example, let's say we wanted to check to see if a die was "fair": this means that its probability of landing on any given face is exactly the same. So the same chance of rolling a 1 as of rolling a 6. 
+
+```{r die_roll}
+my_die_rolls <- sample(x = 1:6, size = 10, replace = TRUE)
+my_die_rolls
+```
+
+We just rolled a die 10 times. Change the 10 to 100, and re-run. Now 1000. See how easy it is to generate these random die rolls?
+
+**Challenge**: write your own R chunk below this which rolls a **10-sided** die 250 times. Print the 127th roll to screen. Print the 213th roll to screen.
+
+## Readings
+
+For anyone interested in learning more, there is material on vectors in the following:
+
+* **DataCamp**: finish the second section (of 6) of **Introduction to R** on vectors
+* **The Book of R**: Chapter 2 (last part) and Chapter 13 of the text go over useful things which supplement this (and last week's) workshops 
+
+And if you would like to read some more details on **sample()**, try the online help system, and type this in the console:
+```{r}
+?sample
+```
+(or use the **Help** tab in the bottom right).

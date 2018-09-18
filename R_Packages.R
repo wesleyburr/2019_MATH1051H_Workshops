@@ -14,7 +14,7 @@ install.packages(c("assertthat", "backports", "base64enc", "BH", "bindr", "bindr
                    "foreign", "graphics", "grDevices", "grid", "KernSmooth", "lattice", "MASS", "Matrix",     
                    "methods", "mgcv", "nlme", "nnet", "parallel", "rpart", "spatial", "splines",    
                    "stats", "stats4", "survival", "tcltk", "tools", "utils"))
-
+tinytex::install_tinytex()
 
 
 

@@ -1,0 +1,114 @@
+---
+title: "MATH 1051H - Workshop 2"
+author: "Wesley S. Burr"
+date: "11/09/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Today in workshop we will be exploring R's variables and variable types. We talked about this in lecture this week, discussing what kinds of data exist, and how they differ. Now we're going to see how they work in the R environment when stored on a computer.
+
+## R Markdown
+
+Before we begin, a lightning-fast primer on R Markdown. R Markdown is a way of making documents in a light-weight simple way, where we mix words (like these ones), code (to analyze data), and results (including nice plots, like the UN Voting demo). 
+
+We strongly encourage you to look at this file and the resulting 'knitted' document as a pair, and consider how to make things look good. Just like in Microsoft Word, you can bold and italicize things, do alignment, and so on, but instead of being a "WYSIWYG" editor (What You See Is What You Get), Markdown gives you a much simpler writing environment, and 'knits' the document to make the fancy and pretty result.
+
+If you'd like to learn more about R Markdown, we suggest starting with the guide on [RStudio's website](https://rmarkdown.rstudio.com/lesson-1.html), and just **playing** with one of these files until you break it. Then fix it! Then break it again ...
+
+## RStudio Interface
+
+There's a few pieces to the RStudio interface which the TA is going to step you through now.
+
+* This document is the **Source** pane
+* The default top right pane is **Environment** (with two additional tabs)
+* The default bottom left pane is **Console** (again, with tabs)
+* The default bottom right pane is **Files** (again, tabs!)
+
+Anything you type in the Source pane is saved. You should think of a workflow as going:
+* put what you want to have happen in the top (source) pane)
+* run it, which causes it to be sent to the calculator/console at the bottom
+
+If you do work directly in the console, it's lost when you reboot or restart or crash or reload. But work done in the source pane will be saved just like any file you save (CTRL+s on Windows or CMD+s on Mac).
+
+Let's try sending a small calculation to the Console by using an "R Chunk". This is a bit of **code**, and we start and stop it by using the 'ticks'. **Note**: these ticks are **not** apostrophes. Can you see the difference between ' and `? Different keys on the keyboard! Press the green arrow on the chunk and send the code down to the console now.
+
+```{r CHUNK_NAME}
+x <- 5
+x^2
+```
+What did we just do? We **assigned** the value 5 to the variable x, and then we asked for x to be squared (x^2). Try changing the 5 to a 6 in the above chunk, and re-run it. What happens?
+
+The console acts like an enormous, super-powerful calculator, with memory. Have you ever used a "M+" key on a hand calculator? Variables act like that: a way to store values as you move through a computation. Let's ramp things up a bit, and do a more complicated expression. One note about chunks, though: if you do give them names (which are the **CHUNK_NAME** and **NEW_CHUNK_NAME** bits), they have to be unique. Try changing NEW_CHUNK_NAME below into CHUNK_NAME, and hit knit. What happens? Now change it back, and run the chunk.
+
+```{r NEW_CHUNK_NAME}
+the_answer <- 42
+the_universe <- 43
+the_answer + the_universe
+```
+
+What did we do there? We used **two memory** stores, and then added the two stores together. The variable names **the_answer** and **the_universe** each had values saved in them, and then they were added together. Go to the chunk NEW_CHUNK_NAME, and add two more lines to it, and compute the product of the two numbers and the quotient (division!) of the_answer over the_universe. Make sure to use the variables to do it, not just the numbers themselves. 
+
+**You just programmed!**
+
+### Practice
+
+Take the above chunk of code, and add a variable **and_everything**, assign it a numeric value, then find the product of all three variables.
+
+### A Note About Documents
+
+There's a big difference between 'running a chunk' (works one bit at a time), and 'knitting'. To knit a document means to create the entire thing into one cohesive whole, and it requires that every bit of the document work. Have you ever tried to write a big report in Word, and something is stubborn and just won't go in the right spot? Or Word crashes on you? R Markdown can be finicky, and it will flat-out refuse to run if there's something 'not right', but it's an incredible environment for **doing science**. We'll talk more about this in coming weeks in both class and workshop.
+
+### Back to Variables
+What kinds of variables did we talk about in class? 
+
+* Numerical: continuous and discrete
+* Categorical: regular and ordinal
+
+Here's a little block of code which creates one of each, so we can explore.
+
+```{r VARIABLES}
+num_cont <- 1.5
+num_disc <- 1L
+cat_regu <- "Male"
+cat_ord <- "12-2"
+cat_tf  <- TRUE
+```
+
+Click the green arrow, and run this snippet of code. See how the code gets 'copied' down to the console and runs as separate lines? Look at the top-right **Environment** tab. The **variables** we just created have appeared there. Now, let's use the console to explore the variables. How does R know what kind of 'box' (variable) to make when we use the assignment ->?
+
+Run this next block:
+```{r CLASSES}
+class(num_cont)
+class(num_disc)
+class(cat_regu)
+class(cat_ord)
+class(cat_tf)
+```
+What do we see? It looks like **num_cont**, the continuous numeric variable, is declared as a **numeric**. That's R-language for continuous numeric! Similarly, by adding the **L** after the 1, **num_disc** comes back as class **integer**. What's the difference?
+
+```{r DEMO_INTEGER}
+test_1 <- 1
+class(test_1)
+test_2 <- 1L
+class(test_2)
+```
+So by adding the **L**, we force the number 1 (default: interpreted as 1.000000000...) to be an integer instead. Subtle point, but worth keeping in mind when we do math on numbers starting next week.
+
+What else did we see above? We saw that both **cat_regu** and **cat_ord** come through as class **character**. This is what R calls words and sentences - 'characters'.
+
+What was the last thing we had there? **cat_tf** is a special kind of variable, something called a **Boolean** in computer science. It only has two possible values: 0 (or FALSE) and 1 (or TRUE). It's like a light switch: on/off, true/false, yes/no, green/red. We use these variables to do **logic** - at its essence, computing is about telling a computer what to do, and sometimes we want the computer to make a decision about things without us having to explicitly tell it what to do. Logical variables are useful for this.
+
+### Practice
+
+Create your own R code block below, name it something interesting, and create a few variables of different types. Try doing things that make sense (like multiplying numbers), and then try things that **don't** make sense. What happens if you try to multiply a character by a numeric? What about a logical times a numeric? Logical times a character? Try a bunch, see what happens!
+
+## Readings
+
+For anyone interested in learning more about variable types and how to work with them in R, here are some references:
+
+* **DataCamp**: several courses have been setup, and the first section/chapters of **Introduction to R** has a great explanation of all of the variable classes
+* **The Book of R**: Chapter 2 and the start of Chapter 4 explain about numeric and non-numeric data types
