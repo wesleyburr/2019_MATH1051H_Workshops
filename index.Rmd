@@ -1,7 +1,7 @@
 ---
 title: "MATH 1051H: Workshop Links"
 author: 'Dr. Wesley S. Burr & Dr. Michelle Boue<br><br/>TAs: Sophie Castel, Seyeon Kim, <br><br>Trevor Tyo, Melissa Van Bussel & Veronica Thorn'
-date: 2018-09-13
+date: 2018-09-27
 output:
   xaringan::moon_reader:
     chakra: remark-latest.min.js
@@ -45,5 +45,13 @@ class: inverse
 ## Workshop 03 - September 20 & 21
 
 <a href="./Workshop03/index.html">Workshop 03 - Link to Slides</a>
+
+---
+
+class: inverse
+
+## Workshop 04 - September 27 & 28
+
+<a href="./Workshop04/index.html">Workshop 04 - Link to Slides</a>
 
 

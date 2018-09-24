@@ -1,0 +1,86 @@
+---
+title: 'Workshop 04: Plots'
+author: "MATH 1051H Instructors"
+date: "24/09/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Histograms for continuous data
+
+We begin our workshop by creating a vector of 100 standard normal random numbers, and then create a histogram from them.
+
+```{r}
+example1<- rnorm(100, 0, 1)
+hist(example1)                          #frequency histogram
+hist(example1, probability = TRUE)      #probabilities, not frequencies
+```
+
+Details must be added to label the histogram properly. Here the histogram and the relative frequency histogram are set to be side-by-side, and with proper axis labels. You can also add colour, if desired.
+
+```{r}
+par(mfrow = c(1, 2))
+hist(example1, main = "Histogram Example 1", xlab = "random number", 
+     ylab = "Frequency", probability = FALSE, col = "blue")
+hist(example1, main = "Relative Freq. Histogram Example 1", xlab = "random number", 
+     ylab = "RelativeFrequency", probability = TRUE, col = "pink")
+```
+
+The **colours** you can use include a wide palette of standard colours, including orange, red, black, green, blue, purple, yellow and pink. Note that the reason that two **hist()** calls in a row didn't end up with two plots was the **par(mfrow = c(1, 2))** command. Insert a hash-tag (#) before row 25, the **par** row, and re-run the chunk. What changes? Try changing **c(1, 2)** to **c(2, 1)**. What's happening?
+
+## Descriptive measures of location and variability
+
+The data for this example are the ages of male and female actors who won the Oscar for their work (in a leading role) from 2000 to 2018. We will use these variables to calculate all the descriptive measures of location and variability that we have studied in class. After typing in the data we check the length of the vector to make sure that we have typed in 19 values.
+
+```{r}
+Actor   <- c(59, 41, 41, 33, 44, 55, 39, 50, 60, 48, 50, 45, 38, 37, 43, 29, 47, 36, 40)
+Actress <- c(60, 28, 26, 54, 44, 22, 62, 29, 45, 33, 32, 61, 29, 30, 28, 35, 35, 33, 25)
+length(Actor)
+length(Actress)
+```
+
+We have two groups, so we evaluate the descriptive measures one set at a time. When data are saved in a **data frame** (class: **data.frame**), it is possible to evaluate one measure for two variables at a time, but we have not learned about data frames yet. We will come back to this topic in a couple of weeks, as we need data frames for the later content of the course.
+
+```{r}
+mean(Actor)       # mean 
+mean(Actress)
+median(Actor)     # median
+median(Actress)
+max(Actor)        # maximum
+max(Actress)
+min(Actor)        # minimum
+min(Actress)
+var(Actor)        # variance
+var(Actress)
+sd(Actor)         # standard deviation
+sd(Actress)
+IQR(Actor)        # inter-quartile range (from percentiles, so not necessarily 
+IQR(Actress)      # same as done manually)
+```
+
+[replace this with a single paragraph describing the differences you see between the Actors and Actresses and their ages when winning an Oscar]
+
+## Side-by-side boxplots
+
+```{r}
+boxplot(Actor, Actress, main = "Ages of Oscar Winners (2000-2018)", 
+        names = c("Actor", "Actress"), horizontal = TRUE)
+```
+
+The **names()** argument to the **boxplot** call gives the labels on the axis to the left. And the **horizontal** argument lets you have horizontal boxplots. Go to the above code and change **horizontal = TRUE** to **horizontal = FALSE**. Re-run the chunk. What do you see?
+
+## Challenge
+
+Use the **sample()** command we talked about in previous weeks to generate two vectors of 20 random samples from 1 to 100. Call these vectors **x** and **y**. Then create a vertically-oriented boxplot from these two samples, making sure your labels are correct and the plot looks nice. 
+
+Create two histograms of these sampled data points on the same plot using the **par(mfrow = c(1, 2))** command like we did earlier in the workshop.
+
+## Knitting your file
+
+When all instructions have worked every time, when you click Knit, you should get an output document which renders the code you wrote and makes a nice document to display. Do it now and you can compare with the one posted on Blackboard. 
+
+
+

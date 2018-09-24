@@ -1,0 +1,98 @@
+---
+title: "MATH 1051H: Workshop 04"
+author: 'Dr. Wesley S. Burr & Dr. Michelle Boue<br><br/>TAs: Sophie Castel, Seyeon Kim, <br><br>Trevor Tyo, Melissa Van Bussel & Veronica Thorn'
+date: 2018-09-27
+output:
+  xaringan::moon_reader:
+    chakra: remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: tomorrow-night-bright
+      highlightLines: true
+      highlightLanguage: r
+    includes:
+      in_header: header.html
+    countIncrementalSlides: false
+    css: example.css
+---
+
+class: inverse
+
+```{r include=FALSE}
+library(ggplot2)
+filter <- dplyr::filter
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.width=10.5, fig.height=4, 
+  comment=NA, rows.print=16)
+theme_set(theme_gray(base_size = 24))
+```
+
+## Step 0: Class Workspace on rstudio.cloud
+
+Some folks are **still** not connected to the workspace. Reminder that this is how you get connected:
+
+<br>
+* go to http://rstudio.cloud/
+* logout (top right)
+* go to http://bit.ly/MATH1051_LecDemo_1
+
+<br>
+The bottom link has a special 'invite' token embedded in it, which adds you to the workspace. If you're not connected, **do this now**. TAs: stop. Wait. Give students time to do this.
+---
+
+<center>
+<img src="./figure/rstudio_cloud.png">
+</center>
+
+You should be able to click on the **MATH 1051 - Lectures and Workshops** workspace now
+
+---
+
+class: inverse
+
+## Step 1: A Demo in rstudio.cloud
+
+* click "Copy Project" next to **Workshop 04**
+* now we're going to alt tab and do this together ... !
+
+<br>
+(if you'd rather download the file to your own computer, you can <a href="Workshop04.Rmd">do that</a>)
+
+---
+
+class: inverse
+
+## WeBWorK Practice Time
+
+Open a new tab, and go to http://webwork.trentu.ca/webwork2/, and login.
+
+<br>
+
+<center>
+<img src="./figure/webwork.png">
+</center>
+
+---
+
+class: inverse
+
+## Step 2: Some Practice Problems
+
+There's also an assignment on WeBWorK called "PracticeProblems3"
+
+* workshop problems
+* practice
+* infinite attempts
+* going to work through them together now!
+
+---
+
+class: inverse
+
+## Questions?
+
+We now have open time for questions.
+
+* about assignment?
+* about rstudio.cloud?
+* about class?
+* anything to do with statistics!
