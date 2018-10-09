@@ -1,5 +1,5 @@
 ---
-title: "MATH 1051H: Workshop Links"
+title: "MATH 1051H: Workshop 06"
 author: 'Dr. Wesley S. Burr & Dr. Michelle Boue<br><br/>TAs: Sophie Castel, Seyeon Kim, <br><br>Trevor Tyo, Melissa Van Bussel & Veronica Thorn'
 date: 2018-10-11
 output:
@@ -26,48 +26,24 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.width=10.5, fig.height=4
 theme_set(theme_gray(base_size = 24))
 ```
 
-## Workshop 01 - September 6 & 7
+class: inverse
 
-<a href="./Workshop01/index.html">Workshop 01 - Link to Slides</a>
+## Step 1: A Demo in rstudio.cloud
+
+* click "Copy Project" next to **Workshop 06**
+* now we're going to alt tab and do this together ... !
+
+<br>
+(if you'd rather download the file to your own computer, you can <a href="Workshop06.Rmd">do that</a>)
 
 ---
 
 class: inverse
 
-## Workshop 02 - September 13 & 14
+## Step 2: Some Practice Problems
 
-<a href="./Workshop02/index.html">Workshop 02 - Link to Slides</a>
+There's also an assignment on WeBWorK called "PracticeProblems5"
 
----
-
-class: inverse
-
-## Workshop 03 - September 20 & 21
-
-<a href="./Workshop03/index.html">Workshop 03 - Link to Slides</a>
-
----
-
-class: inverse
-
-## Workshop 04 - September 27 & 28
-
-<a href="./Workshop04/index.html">Workshop 04 - Link to Slides</a>
-
-
----
-
-class: inverse
-
-## Workshop 05 - October 4 & 5
-
-Workshop 05 - No Slides this week
-
----
-
-class: inverse
-
-## Workshop 06 - October 11 & 12
-
-<a href="./Workshop06/index.html">Workshop 06 - Link to Slides</a>
-
+* practice problems, similar to the content of today's workshop
+* infinite attempts
+* use R and try them!
