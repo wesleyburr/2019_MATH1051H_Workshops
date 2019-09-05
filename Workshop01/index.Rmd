@@ -1,7 +1,7 @@
 ---
 title: "MATH 1051H: Workshop 01"
-author: 'Dr. Wesley S. Burr & Dr. Michelle Boue<br><br/>TAs: Sophie Castel, Seyeon Kim, <br><br>Trevor Tyo, Melissa Van Bussel & Veronica Thorn'
-date: 2018-09-06 
+author: 'Dr. Wesley S. Burr & Dr. Haile Gessesse<br>'
+date: 2019-09-05 
 output:
   xaringan::moon_reader:
     chakra: remark-latest.min.js
@@ -28,10 +28,9 @@ theme_set(theme_gray(base_size = 24))
 
 ## Step 0: WiFi Connection
 
-* there are two WiFi networks across the Trent campus
+* there is one major WiFi network across the Trent campus
     - Eduroam (secure, requires password, ok speed)
-    - Trent Guest (insecure, no password, HORRIBLE)
-* we need to get all your laptops (and phones!) onto Eduroam
+* we need to get all your laptops (and phones!) onto Eduroam, or you have no WiFi ...
 
 ---
 
@@ -39,10 +38,19 @@ class: inverse
 
 ## Step 0: WiFi Connection
 
-1. Put your phones in Airplane mode
+1. Put your phones in Airplane mode (router gets overwhelmed!)
 2. Go to https://cat.eduroam.org/
 3. Download the configuration tool
 4. Install it
+
+<br />
+
+**OR**
+
+1. Go to http://my.trentu.ca/portal/
+2. Click on Services
+3. Click on IT Services (left side)
+4. Connect to WiFi
 
 ---
 
@@ -60,22 +68,13 @@ class: inverse
 
 class: inverse
 
-## Step 1: Logging into WeBWorK
+## Step 1: WeBWorK
 
 * WeBWorK (or WW for short) is an online digital homework and grading system
 * We'll be using it for some of your assignments this year
-* URL: http://webwork.trentu.ca/webwork2/
-
----
-
-class: inverse
-
-## Step 1: Username and Password
-
-* your username is your Trent ID (e.g., "wesleyburr" or "johnsmith")
-* The default password has been set to your **student number** (without the 0)
-    - eg., 601234
-* go and login now!
+* To connect, use the link in Blackboard (so it auto-logs you in!)
+* http://learn.trentu.ca/ -> login to Blackboard -> go to our course -> left hand side
+* **Do not bookmark WW - you have to go back through Blackboard every time**
 
 ---
 
@@ -85,55 +84,23 @@ class: inverse
 
 ---
 
-<center>
-<img src="./figure/webwork2.png">
-</center>
+class: inverse
+
+## Assignment 1
+
+* we've put an Assignment 1 up for everyone to get started on 
+* infinite attempts!
+* play with it, get used to the interface
+* all questions are vocab / definitions from the first chapter of our textbook
 
 ---
 
 class: inverse
 
-## Step 1: Change your Password!
+## Step 2: Our Chat System (called 'Mattermost')
 
-* save the URL http://webwork.trentu.ca/webwork2/ in your **bookmarks**
-* **change your password** to something you know - don't forget what you change it to!
-
-<br>
-<center>
-<img src="./figure/webwork3.png">
-</center>
-
----
-
-class: inverse
-
-## Step 1: Assignment 0
-
-* we've put an Assignment 0 up for everyone to try
-* it doesn't count for grades
-* the problems are really simple and easy (high school!)
-* play with it, get used to the interface, figure out how to put in answers numerically
-
----
-
-class: inverse
-
-## Step 2: Slack
-
-* instead of email, we're going to use **Slack** for class communication
-* email is only for emergencies or personal (sensitive) communication
-* the TAs and Professors will hold digital office hours using the platform
-* another website!
-
----
-
-
-class: inverse
-
-## Step 2: Slack - URL
-
-Go to the URL http://bit.ly/TrentU-Math-Slack and **register**.
-
+* signup link in the announcements on Blackboard
+* go there now if you haven't already, and click the link
 * use your Trent email (e.g., wesleyburr@trentu.ca)
 * don't save this URL: it's a one-time link to get you registered
 * do it now!
@@ -141,19 +108,7 @@ Go to the URL http://bit.ly/TrentU-Math-Slack and **register**.
 ---
 
 <center>
-<img src="./figure/slack.png">
-</center>
-
----
-
-<center>
-<img src="./figure/slack2.png">
-</center>
-
----
-
-<center>
-<img src="./figure/slack3.png">
+<img src="./figure/mattermost.png">
 </center>
 
 ---
@@ -184,17 +139,10 @@ class: inverse
 ## Step 3: RStudio Cloud
 
 To use the cloud version (the suggestion option):
-* go to http://rstudio.cloud/
+* go back to Blackboard
+* click the invite link in the announcement
 * create an account
 * login!
-
----
-
-## Top Right of Screen
-
-<center>
-<img src="./figure/rstudio_cloud.png">
-</center>
 
 ---
 
@@ -214,5 +162,18 @@ We've created a couple of installation videos for you to follow along with:
 * http://bit.ly/MATH1051-Videos
     - Mac: https://www.youtube.com/watch?v=NDItU22Gry0
     - Windows: https://www.youtube.com/watch?v=mGxZ1geGHW8 (last half only)
-* you can come to office hours for help, or ask on Slack
+* you can come to student hours for help, or ask on Mattermost
 * mostly for people who are comfortable installing software and want to use the full-powered version
+
+---
+
+class: inverse
+
+## Step 4: Playing in RStudio
+
+In RStudio's cloud, there are two workshops already visible to you: one is for this week.
+The TAs are now going to step you through making your own copy of the workshop, and creating
+a blank document. 
+
+We're going to do all of our work in this **new** interface, so let's take
+a few minutes to play around and figure out where all the buttons are ...

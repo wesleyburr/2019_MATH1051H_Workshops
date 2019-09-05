@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <title>MATH 1051H: Workshop Links</title>
-    <meta charset="utf-8">
-    <meta name="author" content="Dr. Wesley S. Burr &amp; Dr. Michelle Boue  TAs: Sophie Castel, Seyeon Kim,   Trevor Tyo, Melissa Van Bussel &amp; Veronica Thorn" />
-    <meta name="date" content="2018-10-11" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Wesley S. Burr &amp; Dr. Haile Gessesse" />
+    <meta name="date" content="2019-09-05" />
     <script src="https://use.fontawesome.com/5235085b15.js"></script>
     <link rel="stylesheet" href="example.css" type="text/css" />
   </head>
@@ -13,8 +13,8 @@
 class: center, middle, inverse, title-slide
 
 # MATH 1051H: Workshop Links
-### Dr. Wesley S. Burr &amp; Dr. Michelle Boue<br><br/>TAs: Sophie Castel, Seyeon Kim, <br><br>Trevor Tyo, Melissa Van Bussel &amp; Veronica Thorn
-### 2018-10-11
+### Dr. Wesley S. Burr &amp; Dr. Haile Gessesse
+### 2019-09-05
 
 ---
 
@@ -23,51 +23,11 @@ class: inverse
 
 
 
-## Workshop 01 - September 6 &amp; 7
+## Workshop 01 - September 5, 6 &amp; 11
 
 &lt;a href="./Workshop01/index.html"&gt;Workshop 01 - Link to Slides&lt;/a&gt;
-
----
-
-class: inverse
-
-## Workshop 02 - September 13 &amp; 14
-
-&lt;a href="./Workshop02/index.html"&gt;Workshop 02 - Link to Slides&lt;/a&gt;
-
----
-
-class: inverse
-
-## Workshop 03 - September 20 &amp; 21
-
-&lt;a href="./Workshop03/index.html"&gt;Workshop 03 - Link to Slides&lt;/a&gt;
-
----
-
-class: inverse
-
-## Workshop 04 - September 27 &amp; 28
-
-&lt;a href="./Workshop04/index.html"&gt;Workshop 04 - Link to Slides&lt;/a&gt;
-
-
----
-
-class: inverse
-
-## Workshop 05 - October 4 &amp; 5
-
-Workshop 05 - No Slides this week
-
----
-
-class: inverse
-
-## Workshop 06 - October 11 &amp; 12
-
-&lt;a href="./Workshop06/index.html"&gt;Workshop 06 - Link to Slides&lt;/a&gt;
     </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "tomorrow-night-bright",
@@ -77,16 +37,57 @@ class: inverse
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
 })();</script>
 
 <script>
 (function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -100,14 +101,15 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     i++;
   }
-})();
+};
+slideshow._releaseMath(document);
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
